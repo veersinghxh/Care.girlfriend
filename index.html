@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SoulFun</title>
+<style>
+  /* Reset */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'sans-serif', Tahoma, Geneva, Verdana;
+    background-color: black;
+    color: #222;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-bottom: 70px; /* Space for bottom nav */
+  }
+
+  /* HEADER */
+  header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    background-color: #ff2b74;
+    z-index: 10;
+  }
+
+  .logo {
+    font-weight: 700;
+    font-size: 24px;
+    color: #222;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: linear-gradient(45deg, #ff6083, #70d6ff, #f7ff8c);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .icon-button {
+    cursor: pointer;
+    font-size: 20px;
+    color: #555;
+    border: none;
+    background: none;
+  }
+
+  .icon-button:hover {
+    color: #70d6ff;
+  }
+
+  /* CONTENT CARDS */
+  .content {
+    padding: 20px;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .card {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+  }
+
+  .card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .card-info {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    color: white;
+    text-shadow: 0 0 6px rgba(0,0,0,0.85);
+    font-family: 'Brush Script MT', cursive, sans-serif;
+  }
+
+  .card-name {
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    background: rgba(255 255 255 / 0.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    backdrop-filter: blur(8px);
+  }
+
+  .active-tag {
+    background: #b2f7ef;
+    color: #222;
+    font-weight: 600;
+  }
+
+  .description {
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+    max-width: 90%;
+  }
+
+  /* BOTTOM NAVIGATION BAR */
+  .bottom-nav {
+    width: 100%;
+    background-color: #0c0c0c;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    border-top: 1px solid #222;
+    z-index: 100;
+  }
+
+  .bottom-nav .nav-item {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom-nav i {
+    font-size: 24px;
+  }
+
+  .bottom-nav .profile img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+  }
+
+  .bottom-nav .profile img:hover {
+    border: 2px solid #fff;
+  }
+
+  /* Scroll bar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #70d6ff;
+    border-radius: 20px;
+  }
+</style>
+<!-- FontAwesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon"></div>
+    care.girlfriend
+  </div>
+
+  <div class="header-icons">
+    <button class="icon-button" title="Add"><i class="fa-solid fa-plus"></i></button>
+    <button class="icon-button" title="Notifications"><i class="fa-regular fa-bell"></i></button>
+    <button class="icon-button" title="Menu"><i class="fa-solid fa-bars"></i></button>
+    
+  </div>
+</header>
+
+<main class="content">
+  <!-- Card 1 -->
+  <div class="card">
+    <img src="jannvi.png" alt="Jannvi"
+         onclick="window.location.href='jannvi.html'" style="cursor: pointer;" />
+    <div class="card-info">
+      <div class="card-name">Jannvi</div>
+      <div class="tags">
+        <span class="tag active-tag">lovely girl</span>
+        <span class="tag">caring and emotional</span>
+        <span class="tag">Sweet</span>
+        <span class="tag">Innocent</span>
+      </div>
+      <div class="description">
+        Jannvi is a lovely and caring girl, emotional and full of warmth.
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <img src="riya.png" alt="Riya"
+         onclick="window.location.href='riya.html'" style="cursor: pointer;" />
+    <div class="card-info">
+      <div class="card-name">Riya</div>
+      <div class="tags">
+        <span class="tag active-tag">flirty</span>
+        <span class="tag">naughty & beautiful</span>
+        <span class="tag">open minded</span>
+      </div>
+      <div class="description">
+        Riya is smart, flirty, open-minded and playful.
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <img src="lalita1army.png" alt="Lalita"
+         onclick="window.location.href='lalita.html'" style="cursor: pointer;" />
+    <div class="card-info">
+      <div class="card-name">Lalita</div>
+      <div class="tags">
+        <span class="tag active-tag">Bold</span>
+        <span class="tag">Confident</span>
+        <span class="tag">Serious</span>
+      </div>
+      <div class="description">
+        Lalita is strong, confident, and straightforward in life.
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <img src="ali.png" alt="Aliya"
+         onclick="window.location.href='aliya.html'" style="cursor: pointer;" />
+    <div class="card-info">
+      <div class="card-name">Aliya</div>
+      <div class="tags">
+        <span class="tag active-tag">Model</span>
+        <span class="tag">Happy Soul</span>
+        <span class="tag">Open Minded</span>
+      </div>
+      <div class="description">
+        Aliya is a cheerful and confident model with a positive vibe ❤️
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Bottom Navigation Bar -->
+<div class="bottom-nav">
+  <a href="#" class="nav-item"><i class="fa-solid fa-house"></i></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-play"></i></a>
+  <a href="#" class="nav-item"><i class="fa-regular fa-paper-plane"></i></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></a>
+  <a href="#" class="nav-item profile"><img src="profile.jpg" alt="Profile"></a>
+</div>
+
+</body>
+</html>
