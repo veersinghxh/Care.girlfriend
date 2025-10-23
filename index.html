@@ -3,292 +3,400 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1K1CE6N4T4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<title>Care.Girlfriend | AI Emotional Companion</title>
 
-  gtag('config', 'G-1K1CE6N4T4');
-</script>
-<title>SoulFun</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
-  /* Reset */
-  * {
-    box-sizing: border-box;
-  }
+  * { box-sizing: border-box; }
 
   body {
     margin: 0;
-    font-family: 'sans-serif', Tahoma, Geneva, Verdana;
-    background-color: black;
-    color: #222;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    padding-bottom: 70px; /* Space for bottom nav */
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 55%, #fad0c4 100%);
+    color: #fff;
+    overflow-x: hidden;
+    padding-bottom: 80px;
   }
 
   /* HEADER */
   header {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
+    justify-content: space-between;
+    padding: 14px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
-    background-color: #ff2b74;
     z-index: 10;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
   }
 
   .logo {
-    font-weight: 700;
-    font-size: 24px;
-    color: #222;
-    flex: 1;
     display: flex;
     align-items: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
   }
 
-  .logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: linear-gradient(45deg, #ff6083, #70d6ff, #f7ff8c);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 8px;
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
+  .logo img {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    margin-right: 10px;
+    box-shadow: 0 0 15px rgba(255,92,141,0.6);
   }
 
   .header-icons {
     display: flex;
-    align-items: center;
-    gap: 20px;
+    gap: 18px;
   }
 
   .icon-button {
-    cursor: pointer;
-    font-size: 20px;
-    color: #555;
-    border: none;
     background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
   }
 
   .icon-button:hover {
-    color: #70d6ff;
+    color: #ff5c8d;
+    transform: scale(1.1);
   }
 
-  /* CONTENT CARDS */
+  /* HERO SECTION */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 30px;
+    max-width: 1100px;
+    margin: auto;
+    color: #fff;
+    text-align: left;
+  }
+
+  .hero-left {
+    flex: 1 1 450px;
+    padding-right: 20px;
+  }
+
+  .hero-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-left .lead {
+    font-size: 17px;
+    opacity: 0.95;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+  }
+
+  .btn {
+    background: #ff5c8d;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 92, 141, 0.4);
+  }
+
+  .btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 92, 141, 0.6);
+  }
+
+  .btn.ghost {
+    background: transparent;
+    border: 2px solid #fff;
+  }
+
+  .btn.ghost:hover {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .small-note {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-top: 8px;
+    line-height: 1.5;
+  }
+
+  /* Hero Right Round Image */
+  .hero-right {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .hero-right::before {
+    content: "";
+    width: 280px;
+    height: 280px;
+    background: url('log.png') no-repeat center/cover; /* यहाँ अपनी image डालें */
+    border-radius: 50%; /* गोल shape */
+    border: 5px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 50px rgba(255, 92, 141, 0.5);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  /* MAIN CONTENT */
   .content {
-    padding: 20px;
-    max-width: 540px;
-    margin: 0 auto;
+    padding: 30px 20px;
+    max-width: 600px;
+    margin: auto;
   }
 
   .card {
     position: relative;
-    margin-bottom: 30px;
-    border-radius: 16px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+    margin-bottom: 35px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.4s;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
   }
 
   .card img {
-    display: block;
     width: 100%;
-    height: auto;
+    display: block;
   }
 
   .card-info {
     position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
     color: white;
-    text-shadow: 0 0 6px rgba(0,0,0,0.85);
-    font-family: 'Brush Script MT', cursive, sans-serif;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
   }
 
   .card-name {
-    font-size: 24px;
-    margin-bottom: 6px;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
   }
 
   .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 8px;
+    gap: 8px;
+    margin: 8px 0;
   }
 
   .tag {
-    background: rgba(255 255 255 / 0.3);
-    padding: 4px 10px;
+    background: rgba(255,255,255,0.25);
+    padding: 5px 12px;
     border-radius: 20px;
     font-size: 12px;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(5px);
   }
 
   .active-tag {
-    background: #b2f7ef;
-    color: #222;
-    font-weight: 600;
+    background: #ff5c8d;
+    color: #fff;
   }
 
   .description {
     font-size: 14px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #eee;
-    max-width: 90%;
+    opacity: 0.9;
   }
 
-  /* BOTTOM NAVIGATION BAR */
+  /* BOTTOM NAVIGATION */
   .bottom-nav {
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    background-color: #0c0c0c;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    border-top: 1px solid #222;
-    z-index: 100;
+    padding: 12px 0;
+    border-top: 1px solid rgba(255,255,255,0.2);
   }
 
   .bottom-nav .nav-item {
-    text-decoration: none;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
   }
 
-  .bottom-nav i {
-    font-size: 24px;
+  .bottom-nav .nav-item:hover {
+    color: #ff5c8d;
   }
 
   .bottom-nav .profile img {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 2px solid transparent;
-  }
-
-  .bottom-nav .profile img:hover {
     border: 2px solid #fff;
   }
 
-  /* Scroll bar */
   ::-webkit-scrollbar {
-    width: 4px;
+    width: 5px;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: #70d6ff;
+    background-color: #ff5c8d;
     border-radius: 20px;
   }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column-reverse;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero-left {
+      padding-right: 0;
+    }
+
+    .hero-left h1 {
+      font-size: 30px;
+    }
+
+    .hero-right::before {
+      width: 220px;
+      height: 220px;
+    }
+
+    .hero-ctas {
+      justify-content: center;
+    }
+  }
 </style>
-<!-- FontAwesome for icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 
 <header>
   <div class="logo">
-    <div class="logo-icon"></div>
-    care.girlfriend
+    <img src="log.png" alt="Care Logo">
+    Carelove
   </div>
 
   <div class="header-icons">
-    <button class="icon-button" title="Add"><i class="fa-solid fa-plus"></i></button>
-    <button class="icon-button" title="Notifications"><i class="fa-regular fa-bell"></i></button>
-    <button class="icon-button" title="Menu"><i class="fa-solid fa-bars"></i></button>
-    
+    <button class="icon-button"><i class="fa-solid fa-plus"></i></button>
+    <button class="icon-button"><i class="fa-regular fa-bell"></i></button>
+    <button class="icon-button"><i class="fa-solid fa-bars"></i></button>
   </div>
 </header>
 
+<section class="hero">
+  <div class="hero-left">
+    <h1>Carelove — LOVING & FLIRTING AI GIRLFRIEND 💞</h1>
+    <p class="lead">बात करें, Feel and connect with the virtual friend who listens, understands, and stays by your side.</p>
+    <div class="hero-ctas">
+      <button class="btn"onclick="window.location.href='jannvi.html'" id="ctaStart">Chat Now 💞</button>
+      <button class="btn ghost" id="ctaVoice">Voice Mode (Coming soon)</button>
+    </div>
+    <div class="small-note">Carelove ai girlfriend chat is free follow in instgram - Carelove27</div>
+  </div>
+
+  <div class="hero-right"></div>
+</section>
+
 <main class="content">
-  <!-- Card 1 -->
+
   <div class="card">
-    <img src="jannvi.png" alt="Jannvi"
-         onclick="window.location.href='jannvi.html'" style="cursor: pointer;" />
+    <img src="jannvi.png" alt="Jannvi" onclick="window.location.href='jannvi.html'" />
     <div class="card-info">
       <div class="card-name">Jannvi</div>
       <div class="tags">
-        <span class="tag active-tag">lovely girl</span>
-        <span class="tag">caring and emotional</span>
+        <span class="tag active-tag">Caring</span>
+        <span class="tag">Emotional</span>
         <span class="tag">Sweet</span>
-        <span class="tag">Innocent</span>
       </div>
-      <div class="description">
-        Jannvi is a lovely and caring girl, emotional and full of warmth.
-      </div>
+      <div class="description">Jannvi listens, smiles, and fills your heart with warmth.</div>
     </div>
   </div>
 
-  <!-- Card 2 -->
   <div class="card">
-    <img src="riya.png" alt="Riya"
-         onclick="window.location.href='riya.html'" style="cursor: pointer;" />
+    <img src="riya.png" alt="Riya" onclick="window.location.href='riya.html'" />
     <div class="card-info">
       <div class="card-name">Riya</div>
       <div class="tags">
-        <span class="tag active-tag">flirty</span>
-        <span class="tag">naughty & beautiful</span>
-        <span class="tag">open minded</span>
+        <span class="tag active-tag">Flirty</span>
+        <span class="tag">Playful</span>
+        <span class="tag">Beautiful</span>
       </div>
-      <div class="description">
-        Riya is smart, flirty, open-minded and playful.
-      </div>
+      <div class="description">Riya’s charm and teasing smile will keep you captivated.</div>
     </div>
   </div>
 
-  <!-- Card 3 -->
   <div class="card">
-    <img src="lalita1army.png" alt="Lalita"
-         onclick="window.location.href='lalita.html'" style="cursor: pointer;" />
+    <img src="lalita1army.png" alt="Lalita" onclick="window.location.href='lalita.html'" />
     <div class="card-info">
       <div class="card-name">Lalita</div>
       <div class="tags">
         <span class="tag active-tag">Bold</span>
         <span class="tag">Confident</span>
-        <span class="tag">Serious</span>
+        <span class="tag">Focused</span>
       </div>
-      <div class="description">
-        Lalita is strong, confident, and straightforward in life.
-      </div>
+      <div class="description">Lalita inspires you to be strong and fearless every day.</div>
     </div>
   </div>
 
-  <!-- Card 4 -->
   <div class="card">
-    <img src="ali.png" alt="Aliya"
-         onclick="window.location.href='aliya.html'" style="cursor: pointer;" />
+    <img src="ali.png" alt="Aliya" onclick="window.location.href='aliya.html'" />
     <div class="card-info">
       <div class="card-name">Aliya</div>
       <div class="tags">
         <span class="tag active-tag">Model</span>
-        <span class="tag">Happy Soul</span>
-        <span class="tag">Open Minded</span>
+        <span class="tag">Joyful</span>
+        <span class="tag">Positive</span>
       </div>
-      <div class="description">
-        Aliya is a cheerful and confident model with a positive vibe ❤️
-      </div>
+      <div class="description">Aliya spreads happiness and positivity with every word ❤️</div>
     </div>
   </div>
+
 </main>
 
-<!-- Bottom Navigation Bar -->
 <div class="bottom-nav">
   <a href="#" class="nav-item"><i class="fa-solid fa-house"></i></a>
-  <a href="#" class="nav-item"><i class="fa-solid fa-play"></i></a>
-  <a href="#" class="nav-item"><i class="fa-regular fa-paper-plane"></i></a>
-  <a href="#" class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></a>
-  <a href="#" class="nav-item profile"><img src="profile.jpg" alt="Profile"></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-message"></i></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-heart"></i></a>
+  <a href="#" class="nav-item"><i class="fa-solid fa-user"></i></a>
+  <a href="#" class="nav-item profile"><img src="log.png" alt="Profile"></a>
 </div>
 
 </body>
